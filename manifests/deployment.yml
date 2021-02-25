@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8scld-f0a7"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8scld-f0a7"
+  template:
+    metadata:
+      labels:
+        app: "k8scld-f0a7"
+    spec:
+      containers:
+        - name: "k8scld-f0a7"
+          image: "cldreg.azurecr.io/k8scld"
+          ports:
+          - containerPort: 80
